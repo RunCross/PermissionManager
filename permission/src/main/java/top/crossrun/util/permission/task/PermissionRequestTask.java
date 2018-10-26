@@ -65,18 +65,21 @@ public abstract class PermissionRequestTask {
      * @param title           标题
      * @param msg             申请理由
      * @param onClickListener 取消按钮的回调
-     * @return
+     * @return true = 弹出申请框,false= 无需申请或者传入参数不对
      */
     public boolean requestRationale(@NonNull String title, @NonNull String msg, DialogInterface.OnClickListener onClickListener, @NonNull int requestCode, @NonNull String... pers) {
         Activity act = getActivity();
         if (act == null) {
             return false;
         }
-        for (String per :
-                pers) {
-            if (!ActivityCompat.shouldShowRequestPermissionRationale(act, per)) {
-                return false;
-            }
+//        for (String per :
+//                pers) {
+//            if (ActivityCompat.shouldShowRequestPermissionRationale(act, per)) {
+//                return false;
+//            }
+//        }
+        if (check(pers)){
+            return false;
         }
 
         PermissionDialog
@@ -103,11 +106,8 @@ public abstract class PermissionRequestTask {
         if (act == null) {
             return false;
         }
-        for (String per :
-                pers) {
-            if (!ActivityCompat.shouldShowRequestPermissionRationale(act, per)) {
-                return false;
-            }
+        if (check(pers)){
+            return false;
         }
 
         PermissionDialog

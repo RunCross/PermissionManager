@@ -64,6 +64,7 @@ public class PermissionDialog {
 
     public void show() {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setCancelable(false);
         if (view != null) {
             builder.setView(view);
             final AlertDialog dialog = builder.create();
