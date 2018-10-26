@@ -40,8 +40,6 @@ Android权限申请
 
   `PermissionManager.with().requestRationale()` 
 
-  *`with()`和 `start()` 是同一个效果*
-
   `requestRationale(@NonNull String title, @NonNull String msg, DialogInterface.OnClickListener onClickListener, @NonNull int requestCode, @NonNull String... pers) `
   弹出一个系统默认样式的弹窗 
 
