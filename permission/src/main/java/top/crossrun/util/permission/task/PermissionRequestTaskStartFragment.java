@@ -8,6 +8,8 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 
+import top.crossrun.util.permission.PermissionRequestActivity;
+
 public class PermissionRequestTaskStartFragment extends PermissionRequestTask {
     Fragment fragment;
 
@@ -39,7 +41,7 @@ public class PermissionRequestTaskStartFragment extends PermissionRequestTask {
     @Override
     public <T extends PermissionRequestTask> PermissionRequestTask request(@NonNull int requestCode, @NonNull String... pers) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            Intent intent = new Intent(getContext(), PermissionRequestTaskStartAcitivity.class);
+            Intent intent = new Intent(getContext(), PermissionRequestActivity.class);
             intent.putExtra("requestCode", requestCode);
             intent.putExtra("permissions", pers);
             fragment.startActivityForResult(intent, requestCode);

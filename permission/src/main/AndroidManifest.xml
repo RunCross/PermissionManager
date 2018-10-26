@@ -3,7 +3,10 @@
     package="top.crossrun.util.permission">
 
     <application>
-        <activity android:name=".PermissionRequestActivity"></activity>
+        <activity
+            android:name=".PermissionRequestActivity"
+            android:theme="@style/PM_Theme"
+            />
     </application>
 
 </manifest>

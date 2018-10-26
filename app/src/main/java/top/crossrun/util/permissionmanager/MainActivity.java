@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         PermissionManager
-                .with(this)
-//                .request(1,Manifest.permission.CAMERA);
-        .requestRationale("权限申请","拍照",null,1,Manifest.permission.CAMERA);
+                .start(this)
+                .request(1,Manifest.permission.CAMERA);
+//        .requestRationale("权限申请","拍照",null,1,Manifest.permission.CAMERA);
     }
 
     @Override
