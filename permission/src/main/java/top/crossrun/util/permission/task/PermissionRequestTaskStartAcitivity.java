@@ -2,10 +2,12 @@ package top.crossrun.util.permission.task;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
+import android.view.View;
 
 import top.crossrun.util.permission.PermissionRequestActivity;
 
@@ -40,7 +42,7 @@ public class PermissionRequestTaskStartAcitivity extends PermissionRequestTask {
      * data.getStringArrayListExtra("disallow") <br>
      */
     @Override
-    public <T extends PermissionRequestTask> PermissionRequestTask request(@NonNull int requestCode, @NonNull String... pers) {
+    public void request(@NonNull int requestCode, @NonNull String... pers) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             Intent intent = new Intent(activity, PermissionRequestActivity.class);
             intent.putExtra("requestCode", requestCode);
@@ -49,6 +51,5 @@ public class PermissionRequestTaskStartAcitivity extends PermissionRequestTask {
         } else {
             ActivityCompat.requestPermissions(activity, pers, requestCode);
         }
-        return this;
     }
 }

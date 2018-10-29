@@ -71,12 +71,6 @@ public abstract class PermissionRequestTask {
         if (act == null) {
             return false;
         }
-//        for (String per :
-//                pers) {
-//            if (ActivityCompat.shouldShowRequestPermissionRationale(act, per)) {
-//                return false;
-//            }
-//        }
         if (check(pers)){
             return false;
         }
@@ -133,6 +127,6 @@ public abstract class PermissionRequestTask {
      * @param requestCode
      * @return
      */
-    public abstract <T extends PermissionRequestTask> PermissionRequestTask request(@NonNull int requestCode, @NonNull String... pers);
+    public abstract void request(@NonNull int requestCode, @NonNull String... pers);
 
 }

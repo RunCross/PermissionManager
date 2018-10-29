@@ -34,12 +34,11 @@ public class PermissionRequestTaskWithAcitivity extends PermissionRequestTask {
      * @return
      */
     @Override
-    public <T extends PermissionRequestTask> PermissionRequestTask request(@NonNull int requestCode, @NonNull String... pers) {
+    public void request(@NonNull int requestCode, @NonNull String... pers) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             activity.requestPermissions(pers, requestCode);
         } else {
             ActivityCompat.requestPermissions(activity, pers, requestCode);
         }
-        return this;
     }
 }
