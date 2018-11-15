@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 import top.crossrun.util.permission.dialog.PermissionDialog;
 
-public abstract class PermissionRequestTask {
+public abstract class PermissionRequestTask<T extends PermissionRequestTask> {
     /**
      * 检查权限
      *
@@ -133,6 +133,6 @@ public abstract class PermissionRequestTask {
      * @param requestCode
      * @return
      */
-    public abstract <T extends PermissionRequestTask> PermissionRequestTask request(@NonNull int requestCode, @NonNull String... pers);
+    public abstract T request(@NonNull int requestCode, @NonNull String... pers);
 
 }

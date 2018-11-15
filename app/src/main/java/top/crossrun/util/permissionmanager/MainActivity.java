@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import top.crossrun.util.permission.PermissionManager;
+import top.crossrun.util.permission.task.PermissionRequestTaskStartContext;
+import top.crossrun.util.permission.task.PermissionRequestTaskWithAcitivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        PermissionManager
-                .start(this)
+        PermissionRequestTaskWithAcitivity p = PermissionManager
+                .with(this)
                 .request(1,Manifest.permission.CAMERA);
 //        .requestRationale("权限申请","拍照",null,1,Manifest.permission.CAMERA);
     }

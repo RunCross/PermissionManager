@@ -6,7 +6,7 @@ import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 
-public class PermissionRequestTaskWithAcitivity extends PermissionRequestTask {
+public class PermissionRequestTaskWithAcitivity extends PermissionRequestTask<PermissionRequestTaskWithAcitivity> {
     Activity activity;
 
     public PermissionRequestTaskWithAcitivity(Activity activity) {
@@ -34,7 +34,7 @@ public class PermissionRequestTaskWithAcitivity extends PermissionRequestTask {
      * @return
      */
     @Override
-    public <T extends PermissionRequestTask> PermissionRequestTask request(@NonNull int requestCode, @NonNull String... pers) {
+    public PermissionRequestTaskWithAcitivity request(@NonNull int requestCode, @NonNull String... pers) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             activity.requestPermissions(pers, requestCode);
         } else {
