@@ -35,7 +35,7 @@ public class PermissionRequestTaskWithFragmentV4 extends PermissionRequestTask {
      * @return
      */
     @Override
-    public <T extends PermissionRequestTask> PermissionRequestTask request(@NonNull int requestCode, @NonNull String... pers) {
+    public PermissionRequestTaskWithFragmentV4 request(@NonNull int requestCode, @NonNull String... pers) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             fragment.requestPermissions(pers, requestCode);
         } else {

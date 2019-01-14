@@ -40,7 +40,7 @@ public class PermissionRequestTaskStartContext extends PermissionRequestTask {
      * @return
      */
     @Override
-    public <T extends PermissionRequestTask> PermissionRequestTask request(@NonNull int requestCode, @NonNull String... pers) {
+    public PermissionRequestTaskStartContext request(@NonNull int requestCode, @NonNull String... pers) {
         Activity activity = getActivity();
         if (activity != null) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

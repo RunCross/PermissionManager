@@ -40,7 +40,7 @@ public class PermissionRequestTaskStartAcitivity extends PermissionRequestTask {
      * data.getStringArrayListExtra("disallow") <br>
      */
     @Override
-    public <T extends PermissionRequestTask> PermissionRequestTask request(@NonNull int requestCode, @NonNull String... pers) {
+    public PermissionRequestTaskStartAcitivity request(@NonNull int requestCode, @NonNull String... pers) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             Intent intent = new Intent(activity, PermissionRequestActivity.class);
             intent.putExtra("requestCode", requestCode);
