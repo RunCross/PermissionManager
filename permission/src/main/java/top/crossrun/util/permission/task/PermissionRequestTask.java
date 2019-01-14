@@ -58,6 +58,13 @@ public abstract class PermissionRequestTask<T extends PermissionRequestTask> {
         return result.toArray(r);
     }
 
+    public void autoCheck(@NonNull int requestCode, @NonNull String... pers){
+        String[] p = checks(pers);
+        if (p.length>0){
+            request(requestCode, pers);
+        }
+    }
+
     /**
      * 拒绝后的再次申请,弹出说明框
      *
